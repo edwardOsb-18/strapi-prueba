@@ -3,7 +3,8 @@ services:
     name: osb-strapi
     runtime: node
     rootDir: back
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && npm rebuild better-sqlite3 && npm run build
+    
     startCommand: npm run start
     envVars:
       - key: NODE_VERSION
