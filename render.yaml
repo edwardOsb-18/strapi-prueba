@@ -2,7 +2,30 @@ services:
   - type: web
     name: osb-strapi
     runtime: node
-    plan: free
     rootDir: back
     buildCommand: npm install && npm run build
     startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: "22.22.0"
+
+      - key: HOST
+        value: "0.0.0.0"
+
+      - key: APP_KEYS
+        generateValue: true
+
+      - key: API_TOKEN_SALT
+        generateValue: true
+
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+
+      - key: TRANSFER_TOKEN_SALT
+        generateValue: true
+
+      - key: JWT_SECRET
+        generateValue: true
+
+      - key: ENCRYPTION_KEY
+        generateValue: true
